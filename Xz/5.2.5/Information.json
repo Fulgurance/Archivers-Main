@@ -1,0 +1,20 @@
+{
+  "port": "Archivers-Main",
+  "name": "Xz",
+  "version": "5.2.5",
+  "architectures": ["x86_64"],
+  "description": "Data compression software with a high compression ratio",
+  "website": "https://tukaani.org/xz",
+  "downloadLinks": ["https://tukaani.org/xz/xz-5.2.5.tar.xz"],
+  "md5sums": ["aa1621ec7013a19abab52a8aff04fe5b"],
+  "patchesLinks": [],
+  "installedFiles": [],
+  "dependencies": [
+    {
+      "name": "Bzip2",
+      "version": "1.0.8",
+      "options": []
+    }
+  ],
+  "options": []
+}
