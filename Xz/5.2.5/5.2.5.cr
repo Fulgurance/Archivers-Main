@@ -4,11 +4,11 @@ class Target < ISM::Software
         super
 
         if option("Pass1")
-            configureSource([   "--prefix=#{Ism.settings.rootPath}/usr",
+            configureSource([   "--prefix=/usr",
                                 "--host=#{Ism.settings.target}",
                                 "--build=$(build-aux/config.guess)",
                                 "--disable-static",
-                                "--docdir=#{Ism.settings.rootPath}/usr/share/doc/xz-5.2.5"],
+                                "--docdir=/usr/share/doc/xz-5.2.5"],
                                 buildDirectoryPath)
         else
             configureSource([   "--prefix=/usr",
@@ -27,11 +27,7 @@ class Target < ISM::Software
     def prepareInstallation
         super
 
-        if option("Pass1")
-            makeSource([Ism.settings.makeOptions,"DESTDIR=#{builtSoftwareDirectoryPath}","install"],buildDirectoryPath)
-        else
-            makeSource([Ism.settings.makeOptions,"DESTDIR=#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}","install"],buildDirectoryPath)
-        end
+        makeSource([Ism.settings.makeOptions,"DESTDIR=#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}","install"],buildDirectoryPath)
     end
 
 end
