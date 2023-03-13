@@ -1,0 +1,14 @@
+{
+  "port": "Archivers-Main",
+  "name": "Unrar",
+  "version": "6.0.7",
+  "architectures": ["x86_64"],
+  "description": "Subset of RAR Project to unpack RAR archives",
+  "website": "https://www.rarlab.com",
+  "downloadLinks": ["https://www.rarlab.com/rar/unrarsrc-6.0.7.tar.gz"],
+  "md5sums": ["de5017a63a610cb82dba7d33bd826fb6"],
+  "patchesLinks": [],
+  "installedFiles": [],
+  "dependencies": [],
+  "options": []
+}
