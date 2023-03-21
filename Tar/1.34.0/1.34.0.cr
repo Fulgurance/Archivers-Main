@@ -5,29 +5,28 @@ class Target < ISM::Software
 
         if option("Pass1")
             configureSource([   "--prefix=/usr",
-                            "--host=#{Ism.settings.target}",
-                            "--build=$(build-aux/config.guess)"],
-                            buildDirectoryPath)
+                                "--host=#{Ism.settings.target}",
+                                "--build=$(build-aux/config.guess)"],
+                                buildDirectoryPath)
         else
-            configureSource([   "--prefix=/usr"],
-                                buildDirectoryPath,
-                                "",
-                                {"FORCE_UNSAFE_CONFIGURE" => "1"})
+            configureSource(arguments: [   "--prefix=/usr"],
+                            path: buildDirectoryPath,
+                            environment: {"FORCE_UNSAFE_CONFIGURE" => "1"})
         end
     end
     
     def build
         super
 
-        makeSource([Ism.settings.makeOptions],buildDirectoryPath)
+        makeSource(path: buildDirectoryPath)
     end
     
     def prepareInstallation
         super
 
-        makeSource([Ism.settings.makeOptions,"DESTDIR=#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}","install"],buildDirectoryPath)
+        makeSource(["DESTDIR=#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}","install"],buildDirectoryPath)
         if !option("Pass1")
-            makeSource([Ism.settings.makeOptions,"-C","doc","DESTDIR=#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}","install-html","docdir=/usr/share/doc/tar-1.34"],buildDirectoryPath)
+            makeSource(["-C","doc","DESTDIR=#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}","install-html","docdir=/usr/share/doc/tar-1.34"],buildDirectoryPath)
         end
     end
 

@@ -3,7 +3,7 @@ class Target < ISM::Software
     def build
         super
 
-        makeSource([Ism.settings.makeOptions,"-f","makefile"],buildDirectoryPath)
+        makeSource(["-f","makefile"],buildDirectoryPath)
     end
     
     def prepareInstallation

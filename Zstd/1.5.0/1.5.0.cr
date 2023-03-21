@@ -2,12 +2,12 @@ class Target < ISM::Software
 
     def build
         super
-        makeSource([Ism.settings.makeOptions],buildDirectoryPath)
+        makeSource(path: buildDirectoryPath)
     end
 
     def prepareInstallation
         super
-        makeSource([Ism.settings.makeOptions,"prefix=#{builtSoftwareDirectoryPath}/#{Ism.settings.rootPath}/usr","install"],buildDirectoryPath)
+        makeSource(["prefix=#{builtSoftwareDirectoryPath}/#{Ism.settings.rootPath}usr","install"],buildDirectoryPath)
     end
 
     def clean

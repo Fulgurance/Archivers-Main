@@ -12,13 +12,13 @@ class Target < ISM::Software
     def build
         super
 
-        makeSource([Ism.settings.makeOptions,"all3"],buildDirectoryPath)
+        makeSource(["all3"],buildDirectoryPath)
     end
 
     def prepareInstallation
         super
 
-        makeSource([Ism.settings.makeOptions,"DEST_DIR=#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}","DEST_HOME=/usr","DEST_MAN=/usr/share/man","DEST_SHARE_DOC=/usr/share/doc/p7zip-17.04","install"],buildDirectoryPath)
+        makeSource(["DEST_DIR=#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}","DEST_HOME=/usr","DEST_MAN=/usr/share/man","DEST_SHARE_DOC=/usr/share/doc/p7zip-17.04","install"],buildDirectoryPath)
     end
 
 end
