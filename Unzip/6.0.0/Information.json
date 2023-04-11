@@ -9,6 +9,12 @@
   "md5sums": ["62b490407489521db863b523a7f86375"],
   "patchesLinks": ["https://www.linuxfromscratch.org/patches/blfs/11.0/unzip-6.0-consolidated_fixes-1.patch"],
   "installedFiles": [],
-  "dependencies": [],
+  "dependencies": [
+    {
+      "name": "SystemBase",
+      "version": "0.2.0",
+      "options": []
+    }
+  ],
   "options": []
 }
