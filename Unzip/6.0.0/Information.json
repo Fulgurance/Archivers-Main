@@ -5,9 +5,6 @@
   "architectures": ["x86_64"],
   "description": "Subset of ZIP Project to unpack Zip archives",
   "website": "https://sourceforge.net/projects/infozip/",
-  "downloadLinks": ["https://downloads.sourceforge.net/infozip/unzip60.tar.gz"],
-  "md5sums": ["62b490407489521db863b523a7f86375"],
-  "patchesLinks": ["https://www.linuxfromscratch.org/patches/blfs/11.0/unzip-6.0-consolidated_fixes-1.patch"],
   "installedFiles": [],
   "dependencies": [
     {

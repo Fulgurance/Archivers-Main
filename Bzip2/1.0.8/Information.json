@@ -5,9 +5,6 @@
   "architectures": ["x86_64"],
   "description": "High-quality data compressor twice as fast at compression and six times faster at decompression",
   "website": "https://sourceware.org/bzip2/",
-  "downloadLinks": ["https://www.sourceware.org/pub/bzip2/bzip2-1.0.8.tar.gz"],
-  "md5sums": ["67e051268d0c475ea773822f7500d0e5"],
-  "patchesLinks": ["https://www.linuxfromscratch.org/patches/lfs/11.0/bzip2-1.0.8-install_docs-1.patch"],
   "installedFiles": [],
   "dependencies": [
     {
