@@ -2,7 +2,9 @@
   "port": "Archivers-Main",
   "name": "Unzip",
   "version": "6.0.0",
-  "architectures": ["x86_64"],
+  "architectures": [
+    "x86_64"
+  ],
   "description": "Subset of ZIP Project to unpack Zip archives",
   "website": "https://sourceforge.net/projects/infozip/",
   "installedFiles": [],

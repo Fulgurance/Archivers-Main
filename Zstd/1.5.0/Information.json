@@ -2,7 +2,9 @@
   "port": "Archivers-Main",
   "name": "Zstd",
   "version": "1.5.0",
-  "architectures": ["x86_64"],
+  "architectures": [
+    "x86_64"
+  ],
   "description": "Fast compression algorithm providing high compression ratios",
   "website": "https://facebook.github.io/zstd/",
   "installedFiles": [],

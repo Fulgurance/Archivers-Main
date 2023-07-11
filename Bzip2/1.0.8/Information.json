@@ -2,7 +2,9 @@
   "port": "Archivers-Main",
   "name": "Bzip2",
   "version": "1.0.8",
-  "architectures": ["x86_64"],
+  "architectures": [
+    "x86_64"
+  ],
   "description": "High-quality data compressor twice as fast at compression and six times faster at decompression",
   "website": "https://sourceware.org/bzip2/",
   "installedFiles": [],
@@ -10,7 +12,9 @@
     {
       "name": "SystemBase",
       "version": "0.2.0",
-      "options": ["Pass3"]
+      "options": [
+        "Pass3"
+      ]
     }
   ],
   "kernelDependencies": [],
