@@ -11,7 +11,7 @@
   "dependencies": [
     {
       "name": "Bzip2",
-      "version": "1.0.8",
+      "version": ">=1.0.8",
       "options": []
     }
   ],
@@ -38,7 +38,7 @@
       "dependencies": [
         {
           "name": "Tar",
-          "version": "1.35.0",
+          "version": ">=1.35.0",
           "options": [
             "Pass1"
           ]
