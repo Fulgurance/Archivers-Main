@@ -10,7 +10,7 @@
   "installedFiles": [],
   "dependencies": [
     {
-      "name": "Bzip2",
+      "name": "@Archivers-Main:Bzip2",
       "version": "1.0.8",
       "options": []
     }
@@ -23,7 +23,7 @@
       "active": false,
       "dependencies": [
         {
-          "name": "Tar",
+          "name": "@Archivers-Main:Tar",
           "version": "1.34.0",
           "options": [
             "Pass1"

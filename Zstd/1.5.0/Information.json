@@ -10,7 +10,7 @@
   "installedFiles": [],
   "dependencies": [
     {
-      "name": "Xz",
+      "name": "@Archivers-Main:Xz",
       "version": "5.2.5",
       "options": []
     }

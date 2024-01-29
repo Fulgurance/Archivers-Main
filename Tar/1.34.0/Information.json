@@ -10,7 +10,7 @@
   "installedFiles": [],
   "dependencies": [
     {
-      "name": "Patch",
+      "name": "@ProgrammingTools-Main:Patch",
       "version": "2.7.6",
       "options": []
     }
@@ -23,7 +23,7 @@
       "active": false,
       "dependencies": [
         {
-          "name": "Sed",
+          "name": "@Utilities-Main:Sed",
           "version": "4.8.0",
           "options": [
             "Pass1"
