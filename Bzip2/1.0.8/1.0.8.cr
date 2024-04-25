@@ -109,6 +109,7 @@ class Target < ISM::Software
     def install
         super
 
+        makeLink("libbz2.so.1.0","#{Ism.settings.rootPath}/usr/lib/libbz2.so.1.0.8",:symbolicLinkByOverwrite)
         makeLink("libbz2.so.1.0.8","#{Ism.settings.rootPath}/usr/lib/libbz2.so",:symbolicLink)
         makeLink("bzip2","#{Ism.settings.rootPath}/usr/bin/bzcat",:symbolicLinkByOverwrite)
         makeLink("bzip2","#{Ism.settings.rootPath}/usr/bin/bunzip2",:symbolicLinkByOverwrite)
