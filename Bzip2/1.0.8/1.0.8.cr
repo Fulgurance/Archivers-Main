@@ -76,12 +76,24 @@ class Target < ISM::Software
         if option("32Bits")
             build32Bits
             prepareInstallation32Bits
+
+            makeLink("libbz2.so.1.0.8","#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}/usr/lib32/libbz2.so",:symbolicLinkByOverwrite)
+            makeLink("libbz2.so.1.0.8","#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}/usr/lib32/libbz2.so.1",:symbolicLinkByOverwrite)
+            makeLink("libbz2.so.1.0.8","#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}/usr/lib32/libbz2.so.1.0",:symbolicLinkByOverwrite)
         end
 
         if option("x32Bits")
             buildx32Bits
             prepareInstallationx32Bits
+
+            makeLink("libbz2.so.1.0.8","#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}/usr/libx32/libbz2.so",:symbolicLinkByOverwrite)
+            makeLink("libbz2.so.1.0.8","#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}/usr/libx32/libbz2.so.1",:symbolicLinkByOverwrite)
+            makeLink("libbz2.so.1.0.8","#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}/usr/libx32/libbz2.so.1.0",:symbolicLinkByOverwrite)
         end
+
+        makeLink("libbz2.so.1.0.8","#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}/usr/lib/libbz2.so",:symbolicLink)
+        makeLink("bzip2","#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}/usr/bin/bzcat",:symbolicLinkByOverwrite)
+        makeLink("bzip2","#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}/usr/bin/bunzip2",:symbolicLinkByOverwrite)
     end
 
     def prepareInstallation32Bits
@@ -109,26 +121,14 @@ class Target < ISM::Software
     def install
         super
 
-        makeLink("libbz2.so.1.0.8","#{Ism.settings.rootPath}/usr/lib/libbz2.so",:symbolicLink)
-        makeLink("bzip2","#{Ism.settings.rootPath}/usr/bin/bzcat",:symbolicLinkByOverwrite)
-        makeLink("bzip2","#{Ism.settings.rootPath}/usr/bin/bunzip2",:symbolicLinkByOverwrite)
-
         if option("32Bits")
             setPermissions("#{Ism.settings.rootPath}/usr/lib32/libbz2.so.1.0.8",0o755)
             setPermissions("#{Ism.settings.rootPath}/usr/lib32/libbz2.a",0o644)
-
-            makeLink("libbz2.so.1.0.8","#{Ism.settings.rootPath}/usr/lib32/libbz2.so",:symbolicLinkByOverwrite)
-            makeLink("libbz2.so.1.0.8","#{Ism.settings.rootPath}/usr/lib32/libbz2.so.1",:symbolicLinkByOverwrite)
-            makeLink("libbz2.so.1.0.8","#{Ism.settings.rootPath}/usr/lib32/libbz2.so.1.0",:symbolicLinkByOverwrite)
         end
 
         if option("x32Bits")
             setPermissions("#{Ism.settings.rootPath}/usr/libx32/libbz2.so.1.0.8",0o755)
             setPermissions("#{Ism.settings.rootPath}/usr/libx32/libbz2.a",0o644)
-
-            makeLink("libbz2.so.1.0.8","#{Ism.settings.rootPath}/usr/libx32/libbz2.so",:symbolicLinkByOverwrite)
-            makeLink("libbz2.so.1.0.8","#{Ism.settings.rootPath}/usr/libx32/libbz2.so.1",:symbolicLinkByOverwrite)
-            makeLink("libbz2.so.1.0.8","#{Ism.settings.rootPath}/usr/libx32/libbz2.so.1.0",:symbolicLinkByOverwrite)
         end
     end
 
