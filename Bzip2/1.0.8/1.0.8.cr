@@ -133,6 +133,8 @@ class Target < ISM::Software
             setPermissions("#{Ism.settings.rootPath}/usr/libx32/libbz2.so.1.0.8",0o755)
             setPermissions("#{Ism.settings.rootPath}/usr/libx32/libbz2.a",0o644)
         end
+
+        runLdconfigCommand
     end
 
 end
