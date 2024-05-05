@@ -91,6 +91,9 @@ class Target < ISM::Software
             makeLink("libbz2.so.1.0.8","#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}/usr/libx32/libbz2.so.1.0",:symbolicLinkByOverwrite)
         end
 
+        deleteFile("#{builtSoftwareDirectoryPath(false)}/#{Ism.settings.rootPath}/usr/bin/bzcat")
+        deleteFile("#{builtSoftwareDirectoryPath(false)}/#{Ism.settings.rootPath}/usr/bin/bunzip2")
+
         makeLink("libbz2.so.1.0.8","#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}/usr/lib/libbz2.so",:symbolicLink)
         makeLink("bzip2","#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}/usr/bin/bzcat",:symbolicLinkByOverwrite)
         makeLink("bzip2","#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}/usr/bin/bunzip2",:symbolicLinkByOverwrite)
