@@ -10,7 +10,7 @@
   "installedFiles": [],
   "dependencies": [
     {
-      "name": "@Archivers-Main:",
+      "name": "@SystemBase-Main:SystemBase",
       "version": ">=0.2.0",
       "options": []
     }
