@@ -2,15 +2,14 @@
   "port": "Archivers-Main",
   "name": "P7zip",
   "version": "17.4.0",
-  "architectures": [
-    "x86_64"
-  ],
+  "architectures": ["x86_64"],
   "description": "New p7zip fork with additional codecs and improvements",
   "website": "https://github.com/p7zip-project/p7zip",
   "installedFiles": [],
   "dependencies": [
     {
-      "name": "@SystemBase-Main:SystemBase",
+      "port": "SystemBase-Main",
+      "name": "SystemBase",
       "version": ">=0.2.0",
       "options": []
     }

@@ -2,15 +2,14 @@
   "port": "Archivers-Main",
   "name": "Tar",
   "version": "1.35.0",
-  "architectures": [
-    "x86_64"
-  ],
+  "architectures": ["x86_64"],
   "description": "GNU Tar tool to create archives, stores and extract files",
   "website": "https://www.gnu.org/software/tar/",
   "installedFiles": [],
   "dependencies": [
     {
-      "name": "@ProgrammingTools-Main:Patch",
+      "port": "ProgrammingTools-Main",
+      "name": "Patch",
       "version": "2.7.6",
       "options": []
     }
@@ -23,11 +22,10 @@
       "active": false,
       "dependencies": [
         {
-          "name": "@Utilities-Main:Sed",
+          "port": "ProgrammingTools-Main",
+          "name": "Sed",
           "version": "4.9.0",
-          "options": [
-            "Pass1"
-          ]
+          "options": ["Pass1"]
         }
       ],
       "kernelDependencies": []

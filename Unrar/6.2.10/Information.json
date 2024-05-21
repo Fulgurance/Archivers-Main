@@ -2,15 +2,14 @@
   "port": "Archivers-Main",
   "name": "Unrar",
   "version": "6.2.10",
-  "architectures": [
-    "x86_64"
-  ],
+  "architectures": ["x86_64"],
   "description": "Subset of RAR Project to unpack RAR archives",
   "website": "https://www.rarlab.com",
   "installedFiles": [],
   "dependencies": [
     {
-      "name": "@SystemBase-Main:SystemBase",
+      "port": "SystemBase-Main",
+      "name": "SystemBase",
       "version": "0.2.0",
       "options": []
     }

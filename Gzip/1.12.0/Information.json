@@ -2,19 +2,16 @@
   "port": "Archivers-Main",
   "name": "Gzip",
   "version": "1.12.0",
-  "architectures": [
-    "x86_64"
-  ],
+  "architectures": ["x86_64"],
   "description": "The GNU Gzip data compression program",
   "website": "https://www.gnu.org/software/gzip/",
   "installedFiles": [],
   "dependencies": [
     {
-      "name": "@SystemBase-Main:SystemBase",
+      "port": "SystemBase-Main",
+      "name": "SystemBase",
       "version": "0.2.0",
-      "options": [
-        "Pass3"
-      ]
+      "options": ["Pass3"]
     }
   ],
   "kernelDependencies": [],
@@ -25,11 +22,10 @@
       "active": false,
       "dependencies": [
         {
-          "name": "@Utilities-Main:Grep",
+          "port": "Utilities-Main",
+          "name": "Grep",
           "version": "3.11.0",
-          "options": [
-            "Pass1"
-          ]
+          "options": ["Pass1"]
         }
       ],
       "kernelDependencies": []

@@ -2,15 +2,14 @@
   "port": "Archivers-Main",
   "name": "Xz",
   "version": "5.4.4",
-  "architectures": [
-    "x86_64"
-  ],
+  "architectures": ["x86_64"],
   "description": "Data compression software with a high compression ratio",
   "website": "https://tukaani.org/xz",
   "installedFiles": [],
   "dependencies": [
     {
-      "name": "@Archivers-Main:Bzip2",
+      "port": "Archivers-Main",
+      "name": "Bzip2",
       "version": ">=1.0.8",
       "options": []
     }
@@ -37,11 +36,10 @@
       "active": false,
       "dependencies": [
         {
-          "name": "@Archivers-Main:Tar",
+          "port": "Archivers-Main",
+          "name": "Tar",
           "version": ">=1.35.0",
-          "options": [
-            "Pass1"
-          ]
+          "options": ["Pass1"]
         }
       ],
       "kernelDependencies": []
