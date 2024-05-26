@@ -10,7 +10,7 @@
     {
       "port": "ProgrammingTools-Main",
       "name": "Patch",
-      "version": "2.7.6",
+      "version": ">=2.7.6",
       "options": []
     }
   ],
@@ -22,9 +22,9 @@
       "active": false,
       "dependencies": [
         {
-          "port": "ProgrammingTools-Main",
+          "port": "Utilities-Main",
           "name": "Sed",
-          "version": "4.9.0",
+          "version": ">=4.9.0",
           "options": ["Pass1"]
         }
       ],

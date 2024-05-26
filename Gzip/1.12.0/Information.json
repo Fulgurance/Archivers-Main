@@ -10,7 +10,7 @@
     {
       "port": "SystemBase-Main",
       "name": "SystemBase",
-      "version": "0.2.0",
+      "version": ">=0.2.0",
       "options": ["Pass3"]
     }
   ],
@@ -24,7 +24,7 @@
         {
           "port": "Utilities-Main",
           "name": "Grep",
-          "version": "3.11.0",
+          "version": ">=3.11.0",
           "options": ["Pass1"]
         }
       ],
