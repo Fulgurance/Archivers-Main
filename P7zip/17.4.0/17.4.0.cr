@@ -3,10 +3,10 @@ class Target < ISM::Software
     def prepare
         super
 
-        fileDeleteLine("#{buildDirectoryPath(false)}install.sh",162)
-        fileDeleteLine("#{buildDirectoryPath(false)}install.sh",162)
-        fileDeleteLine("#{buildDirectoryPath(false)}install.sh",162)
-        fileReplaceTextAtLineNumber("#{buildDirectoryPath(false)}CPP/7zip/Common/StreamObjects.cpp", "return E_FAIL;","if(_buffer == nullptr || _size == _pos) return E_FAIL;\nreturn E_FAIL;",161)
+        fileDeleteLine("#{buildDirectoryPath}install.sh",162)
+        fileDeleteLine("#{buildDirectoryPath}install.sh",162)
+        fileDeleteLine("#{buildDirectoryPath}install.sh",162)
+        fileReplaceTextAtLineNumber("#{buildDirectoryPath}CPP/7zip/Common/StreamObjects.cpp", "return E_FAIL;","if(_buffer == nullptr || _size == _pos) return E_FAIL;\nreturn E_FAIL;",161)
     end
 
     def build

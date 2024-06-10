@@ -3,10 +3,10 @@ class Target < ISM::Software
     def prepare
         super
 
-        fileReplaceText("#{buildDirectoryPath(false)}/Makefile",
+        fileReplaceText("#{buildDirectoryPath}/Makefile",
                         "ln -s -f $(PREFIX)/bin/",
                         "ln -s -f ")
-        fileReplaceText("#{buildDirectoryPath(false)}/Makefile",
+        fileReplaceText("#{buildDirectoryPath}/Makefile",
                         "$(PREFIX)/man",
                         "$(PREFIX)/share/man")
 
@@ -15,7 +15,7 @@ class Target < ISM::Software
         makeSource( ["clean"],
                     path: buildDirectoryPath)
 
-        deleteFile("#{buildDirectoryPath(false)}/libbz2.so.1.0")
+        deleteFile("#{buildDirectoryPath}/libbz2.so.1.0")
     end
 
     def build
@@ -29,10 +29,10 @@ class Target < ISM::Software
         makeSource( ["clean"],
                     path: buildDirectoryPath)
 
-        fileReplaceText("#{buildDirectoryPath(false)}/Makefile",
+        fileReplaceText("#{buildDirectoryPath}/Makefile",
                         "CC=gcc",
                         "CC=gcc -m32")
-        fileReplaceText("#{buildDirectoryPath(false)}/Makefile-libbz2_so",
+        fileReplaceText("#{buildDirectoryPath}/Makefile-libbz2_so",
                         "CC=gcc",
                         "CC=gcc -m32")
 
@@ -47,10 +47,10 @@ class Target < ISM::Software
         makeSource( ["clean"],
                     path: buildDirectoryPath)
 
-        fileReplaceText("#{buildDirectoryPath(false)}/Makefile",
+        fileReplaceText("#{buildDirectoryPath}/Makefile",
                         "CC=gcc",
                         "CC=gcc -mx32")
-        fileReplaceText("#{buildDirectoryPath(false)}/Makefile-libbz2_so",
+        fileReplaceText("#{buildDirectoryPath}/Makefile-libbz2_so",
                         "CC=gcc",
                         "CC=gcc -mx32")
 
@@ -65,60 +65,60 @@ class Target < ISM::Software
 
         makeSource(["PREFIX=#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}usr","install"],buildDirectoryPath)
 
-        copyFile(   Dir["#{buildDirectoryPath(false)}/libbz2.so.*"],
-                    "#{builtSoftwareDirectoryPath(false)}/#{Ism.settings.rootPath}/usr/lib")
+        copyFile(   Dir["#{buildDirectoryPath}/libbz2.so.*"],
+                    "#{builtSoftwareDirectoryPath}/#{Ism.settings.rootPath}/usr/lib")
 
-        copyFile(   "#{buildDirectoryPath(false)}/bzip2-shared",
-                    "#{builtSoftwareDirectoryPath(false)}/#{Ism.settings.rootPath}/usr/bin/bzip2")
+        copyFile(   "#{buildDirectoryPath}/bzip2-shared",
+                    "#{builtSoftwareDirectoryPath}/#{Ism.settings.rootPath}/usr/bin/bzip2")
 
-        deleteFile("#{builtSoftwareDirectoryPath(false)}/#{Ism.settings.rootPath}/usr/lib/libbz2.a")
+        deleteFile("#{builtSoftwareDirectoryPath}/#{Ism.settings.rootPath}/usr/lib/libbz2.a")
 
         if option("32Bits")
             build32Bits
             prepareInstallation32Bits
 
-            makeLink("libbz2.so.1.0.8","#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}/usr/lib32/libbz2.so",:symbolicLinkByOverwrite)
-            makeLink("libbz2.so.1.0.8","#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}/usr/lib32/libbz2.so.1",:symbolicLinkByOverwrite)
-            makeLink("libbz2.so.1.0.8","#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}/usr/lib32/libbz2.so.1.0",:symbolicLinkByOverwrite)
+            makeLink("libbz2.so.1.0.8","#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}/usr/lib32/libbz2.so",:symbolicLinkByOverwrite)
+            makeLink("libbz2.so.1.0.8","#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}/usr/lib32/libbz2.so.1",:symbolicLinkByOverwrite)
+            makeLink("libbz2.so.1.0.8","#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}/usr/lib32/libbz2.so.1.0",:symbolicLinkByOverwrite)
         end
 
         if option("x32Bits")
             buildx32Bits
             prepareInstallationx32Bits
 
-            makeLink("libbz2.so.1.0.8","#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}/usr/libx32/libbz2.so",:symbolicLinkByOverwrite)
-            makeLink("libbz2.so.1.0.8","#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}/usr/libx32/libbz2.so.1",:symbolicLinkByOverwrite)
-            makeLink("libbz2.so.1.0.8","#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}/usr/libx32/libbz2.so.1.0",:symbolicLinkByOverwrite)
+            makeLink("libbz2.so.1.0.8","#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}/usr/libx32/libbz2.so",:symbolicLinkByOverwrite)
+            makeLink("libbz2.so.1.0.8","#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}/usr/libx32/libbz2.so.1",:symbolicLinkByOverwrite)
+            makeLink("libbz2.so.1.0.8","#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}/usr/libx32/libbz2.so.1.0",:symbolicLinkByOverwrite)
         end
 
-        deleteFile("#{builtSoftwareDirectoryPath(false)}/#{Ism.settings.rootPath}/usr/bin/bzcat")
-        deleteFile("#{builtSoftwareDirectoryPath(false)}/#{Ism.settings.rootPath}/usr/bin/bunzip2")
+        deleteFile("#{builtSoftwareDirectoryPath}/#{Ism.settings.rootPath}/usr/bin/bzcat")
+        deleteFile("#{builtSoftwareDirectoryPath}/#{Ism.settings.rootPath}/usr/bin/bunzip2")
 
-        makeLink("libbz2.so.1.0.8","#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}/usr/lib/libbz2.so",:symbolicLink)
-        makeLink("bzip2","#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}/usr/bin/bzcat",:symbolicLinkByOverwrite)
-        makeLink("bzip2","#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}/usr/bin/bunzip2",:symbolicLinkByOverwrite)
+        makeLink("libbz2.so.1.0.8","#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}/usr/lib/libbz2.so",:symbolicLink)
+        makeLink("bzip2","#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}/usr/bin/bzcat",:symbolicLinkByOverwrite)
+        makeLink("bzip2","#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}/usr/bin/bunzip2",:symbolicLinkByOverwrite)
     end
 
     def prepareInstallation32Bits
 
-        makeDirectory("#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}/usr/lib32")
+        makeDirectory("#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}/usr/lib32")
 
-        copyDirectory(  "#{buildDirectoryPath(false)}/libbz2.so.1.0.8",
-                        "#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}/usr/lib32/libbz2.so.1.0.8")
+        copyDirectory(  "#{buildDirectoryPath}/libbz2.so.1.0.8",
+                        "#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}/usr/lib32/libbz2.so.1.0.8")
 
-        copyDirectory(  "#{buildDirectoryPath(false)}/libbz2.a",
-                        "#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}/usr/lib32/libbz2.a")
+        copyDirectory(  "#{buildDirectoryPath}/libbz2.a",
+                        "#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}/usr/lib32/libbz2.a")
     end
 
     def prepareInstallationx32Bits
 
-        makeDirectory("#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}/usr/libx32")
+        makeDirectory("#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}/usr/libx32")
 
-        copyDirectory(  "#{buildDirectoryPath(false)}/libbz2.so.1.0.8",
-                        "#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}/usr/libx32/libbz2.so.1.0.8")
+        copyDirectory(  "#{buildDirectoryPath}/libbz2.so.1.0.8",
+                        "#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}/usr/libx32/libbz2.so.1.0.8")
 
-        copyDirectory(  "#{buildDirectoryPath(false)}/libbz2.a",
-                        "#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}/usr/libx32/libbz2.a")
+        copyDirectory(  "#{buildDirectoryPath}/libbz2.a",
+                        "#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}/usr/libx32/libbz2.a")
     end
 
     def install

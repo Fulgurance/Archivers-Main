@@ -31,7 +31,7 @@ class Target < ISM::Software
 
         makeSource(["prefix=/usr","DESTDIR=#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}","install"],buildDirectoryPath)
 
-        deleteFile("#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}/usr/lib/libzstd.a")
+        deleteFile("#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}/usr/lib/libzstd.a")
 
         if option("32Bits")
             build32Bits
@@ -46,38 +46,38 @@ class Target < ISM::Software
 
     def prepareInstallation32Bits
 
-        makeDirectory("#{buildDirectoryPath(false)}/32Bits")
+        makeDirectory("#{buildDirectoryPath}/32Bits")
 
-        makeDirectory("#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}/usr")
+        makeDirectory("#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}/usr")
 
         makeSource( ["prefix=/usr",
-                    "DESTDIR=#{buildDirectoryPath(false)}/32Bits",
+                    "DESTDIR=#{buildDirectoryPath}/32Bits",
                     "install"],
                     path: buildDirectoryPath)
 
-        copyDirectory(  "#{buildDirectoryPath(false)}/32Bits/usr/lib",
-                        "#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}/usr/lib32")
+        copyDirectory(  "#{buildDirectoryPath}/32Bits/usr/lib",
+                        "#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}/usr/lib32")
 
-        fileReplaceText("#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}/usr/lib32/pkgconfig/libzstd.pc",
+        fileReplaceText("#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}/usr/lib32/pkgconfig/libzstd.pc",
                         "libdir=/lib64",
                         "libdir=/lib32")
     end
 
     def prepareInstallationx32Bits
 
-        makeDirectory("#{buildDirectoryPath(false)}/x32Bits")
+        makeDirectory("#{buildDirectoryPath}/x32Bits")
 
-        makeDirectory("#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}/usr")
+        makeDirectory("#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}/usr")
 
         makeSource( ["prefix=/usr",
-                    "DESTDIR=#{buildDirectoryPath(false)}/x32Bits",
+                    "DESTDIR=#{buildDirectoryPath}/x32Bits",
                     "install"],
                     path: buildDirectoryPath)
 
-        copyDirectory(  "#{buildDirectoryPath(false)}/x32Bits/usr/lib",
-                        "#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}/usr/libx32")
+        copyDirectory(  "#{buildDirectoryPath}/x32Bits/usr/lib",
+                        "#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}/usr/libx32")
 
-        fileReplaceText("#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}/usr/libx32/pkgconfig/libzstd.pc",
+        fileReplaceText("#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}/usr/libx32/pkgconfig/libzstd.pc",
                         "libdir=/lib64",
                         "libdir=/libx32")
     end

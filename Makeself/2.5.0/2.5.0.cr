@@ -5,7 +5,7 @@ class Target < ISM::Software
 
         makeDirectory("#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}/usr/bin")
 
-        moveFile("#{mainWorkDirectoryPath(false)}/makeself.sh","#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}/usr/bin/makeself")
+        moveFile("#{mainWorkDirectoryPath}/makeself.sh","#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}/usr/bin/makeself")
     end
 
     def install
