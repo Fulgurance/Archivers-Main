@@ -125,13 +125,15 @@ class Target < ISM::Software
         super
 
         if option("32Bits")
-            setPermissions("#{Ism.settings.rootPath}/usr/lib32/libbz2.so.1.0.8",0o755)
-            setPermissions("#{Ism.settings.rootPath}/usr/lib32/libbz2.a",0o644)
+
+            runChmodCommand(["0755","/usr/lib32/libbz2.so.1.0.8"])
+            runChmodCommand(["0644","/usr/lib32/libbz2.a"])
         end
 
         if option("x32Bits")
-            setPermissions("#{Ism.settings.rootPath}/usr/libx32/libbz2.so.1.0.8",0o755)
-            setPermissions("#{Ism.settings.rootPath}/usr/libx32/libbz2.a",0o644)
+
+            runChmodCommand(["0755","/usr/libx32/libbz2.so.1.0.8"])
+            runChmodCommand(["0644","/usr/libx32/libbz2.a"])
         end
 
         runLdconfigCommand
