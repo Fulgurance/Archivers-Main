@@ -65,7 +65,7 @@ class Target < ISM::Software
 
         makeSource(["PREFIX=#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}usr","install"],buildDirectoryPath)
 
-        copyFile(   Dir["#{buildDirectoryPath}/libbz2.so.*"],
+        copyFile(   "#{buildDirectoryPath}/libbz2.so.*",
                     "#{builtSoftwareDirectoryPath}/#{Ism.settings.rootPath}/usr/lib")
 
         copyFile(   "#{buildDirectoryPath}/bzip2-shared",
