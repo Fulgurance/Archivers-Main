@@ -5,13 +5,14 @@ class Target < ISM::Software
 
         makeDirectory("#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}/usr/bin")
 
-        moveFile("#{mainWorkDirectoryPath}/makeself.sh","#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}/usr/bin/makeself")
+        moveFile(   "#{mainWorkDirectoryPath}/makeself.sh",
+                    "#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}/usr/bin/makeself")
     end
 
     def install
         super
 
-        runChmodCommand(["+x","/usr/bin/makeself"])
+        runChmodCommand(arguments: "+x /usr/bin/makeself")
     end
 
 end

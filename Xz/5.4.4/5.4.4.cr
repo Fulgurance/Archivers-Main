@@ -21,34 +21,33 @@ class Target < ISM::Software
         super
 
         if option("Pass1")
-            configureSource([   "--prefix=/usr",
-                                "--host=#{Ism.settings.chrootTarget}",
-                                "--build=$(build-aux/config.guess)",
-                                "--disable-static",
-                                "--docdir=/usr/share/doc/xz-5.4.4"],
-                                buildDirectoryPath)
+            configureSource(arguments:  "--prefix=/usr                      \
+                                        --host=#{Ism.settings.chrootTarget} \
+                                        --build=$(build-aux/config.guess)   \
+                                        --disable-static                    \
+                                        --docdir=/usr/share/doc/xz-5.4.4",
+                            path:       buildDirectoryPath)
         else
-            configureSource([   "--prefix=/usr",
-                                "--disable-static",
-                                "--docdir=/usr/share/doc/xz-5.4.4"],
-                                buildDirectoryPath)
+            configureSource(arguments:  "--prefix=/usr      \
+                                        --disable-static    \
+                                        --docdir=/usr/share/doc/xz-5.4.4",
+                            path:       buildDirectoryPath)
 
             if option("32Bits")
-                configureSource([   "--host=i686-#{Ism.settings.systemTargetName}-linux-gnu",
-                                    "--prefix=/usr",
-                                    "--libdir=/usr/lib32",
-                                    "--disable-static"],
-                                    path: buildDirectoryPath(entry: "32Bits"),
-                                    environment: {"CC" =>"gcc -m32"})
+                configureSource(arguments:      "--host=i686-#{Ism.settings.systemTargetName}-linux-gnu \
+                                                --prefix=/usr                                           \
+                                                --libdir=/usr/lib32                                     \
+                                                --disable-static",
+                                path:           buildDirectoryPath(entry: "32Bits"),
+                                environment:    {"CC" =>"gcc -m32"})
             end
 
             if option("x32Bits")
-                configureSource([   "--host=#{Ism.settings.systemTarget}x32",
-                                    "--prefix=/usr",
-                                    "--libdir=/usr/libx32",
-                                    "--disable-static"],
-                                    path: buildDirectoryPath(entry: "x32Bits"),
-                                    environment: {"CC" =>"gcc -mx32"})
+                configureSource(arguments:      "--host=#{Ism.settings.systemTarget}x32 \
+                                                --prefix=/usr \--libdir=/usr/libx32     \
+                                                --disable-static",
+                                path:           buildDirectoryPath(entry: "x32Bits"),
+                                environment:    {"CC" =>"gcc -mx32"})
             end
         end
     end
@@ -72,7 +71,8 @@ class Target < ISM::Software
     def prepareInstallation
         super
 
-        makeSource(["DESTDIR=#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}","install"],buildDirectoryPath)
+        makeSource( arguments:   "DESTDIR=#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath} install"
+                    path:       buildDirectoryPath)
 
         if option("Pass1")
             deleteFile("#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}/usr/lib/liblzma.la")
@@ -81,8 +81,7 @@ class Target < ISM::Software
                 makeDirectory("#{buildDirectoryPath(entry: "32Bits")}/32Bits")
                 makeDirectory("#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}/usr")
 
-                makeSource( ["DESTDIR=#{buildDirectoryPath(entry: "32Bits")}/32Bits",
-                            "install"],
+                makeSource( arguments:   "DESTDIR=#{buildDirectoryPath(entry: "32Bits")}/32Bits install",
                             path: buildDirectoryPath(entry: "32Bits"))
 
                 copyDirectory(  "#{buildDirectoryPath(entry: "32Bits")}/32Bits/usr/lib32",
@@ -93,8 +92,7 @@ class Target < ISM::Software
                 makeDirectory("#{buildDirectoryPath(entry: "x32Bits")}/x32Bits")
                 makeDirectory("#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}/usr")
 
-                makeSource( ["DESTDIR=#{buildDirectoryPath(entry: "x32Bits")}/x32Bits",
-                            "install"],
+                makeSource( arguments:   "DESTDIR=#{buildDirectoryPath(entry: "x32Bits")}/x32Bits install",
                             path: buildDirectoryPath(entry: "x32Bits"))
 
                 copyDirectory(  "#{buildDirectoryPath(entry: "x32Bits")}/x32Bits/usr/libx32",
