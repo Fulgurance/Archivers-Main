@@ -22,7 +22,7 @@ class Target < ISM::Software
         makeSource( arguments:  "clean",
                     path:       buildDirectoryPath)
 
-        makeSource( arguments:      "prefix=/usr"],
+        makeSource( arguments:      "prefix=/usr",
                     path:           buildDirectoryPath,
                     environment:    {"CC" => "gcc -mx32"})
     end
