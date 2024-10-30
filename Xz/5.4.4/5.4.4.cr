@@ -8,12 +8,12 @@ class Target < ISM::Software
                                         --host=#{Ism.settings.chrootTarget} \
                                         --build=$(build-aux/config.guess)   \
                                         --disable-static                    \
-                                        --docdir=/usr/share/doc/xz-5.4.4",
+                                        --docdir=/usr/share/doc/#{versionName}",
                             path:       buildDirectoryPath)
         else
             configureSource(arguments:  "--prefix=/usr      \
                                         --disable-static    \
-                                        --docdir=/usr/share/doc/xz-5.4.4",
+                                        --docdir=/usr/share/doc/#{versionName}",
                             path:       buildDirectoryPath)
         end
     end

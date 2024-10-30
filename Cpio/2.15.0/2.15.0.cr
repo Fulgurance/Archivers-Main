@@ -3,9 +3,9 @@ class Target < ISM::Software
     def configure
         super
 
-        configureSource(    arguments:  "   --prefix=/usr \
-                                            --enable-mt   \
-                                            --with-rmt=/usr/libexec/rmt",
+        configureSource(    arguments:  "--prefix=/usr \
+                                        --enable-mt   \
+                                        --with-rmt=/usr/libexec/rmt",
                             path:       buildDirectoryPath)
     end
     
