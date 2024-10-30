@@ -3,14 +3,10 @@ class Target < ISM::Software
     def configure
         super
 
-        if option("Pass1")
-            configureSource(arguments:  "--prefix=/usr \
-                                        --host=#{Ism.settings.chrootTarget}",
-                            path: buildDirectoryPath)
-        else
-            configureSource(arguments:  "--prefix=/usr",
+        configureSource(    arguments:  "   --prefix=/usr \
+                                            --enable-mt   \
+                                            --with-rmt=/usr/libexec/rmt",
                             path:       buildDirectoryPath)
-        end
     end
     
     def build
