@@ -3,7 +3,7 @@ class Target < ISM::Software
     def build
         super
 
-        makeSource( arguments:   "-f unix/Makefile generic_gcc",
+        makeSource( arguments:   "-f unix/Makefile generic CC=\"gcc -std=gnu89\"",
                     path:       buildDirectoryPath)
     end
     
