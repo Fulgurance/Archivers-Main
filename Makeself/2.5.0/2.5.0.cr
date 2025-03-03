@@ -9,10 +9,4 @@ class Target < ISM::Software
                     "#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}/usr/bin/makeself")
     end
 
-    def install
-        super
-
-        runChmodCommand(arguments: "+x /usr/bin/makeself")
-    end
-
 end
