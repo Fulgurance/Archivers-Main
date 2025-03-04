@@ -55,10 +55,4 @@ class Target < ISM::Software
                     type:   :symbolicLinkByOverwrite)
     end
 
-    def install
-        super
-
-        runLdconfigCommand
-    end
-
 end
