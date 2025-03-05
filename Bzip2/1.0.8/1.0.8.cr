@@ -16,8 +16,6 @@ class Target < ISM::Software
 
         makeSource( arguments:  "clean",
                     path:       buildDirectoryPath)
-
-        deleteFile("#{buildDirectoryPath}/libbz2.so.1.0")
     end
 
     def build
