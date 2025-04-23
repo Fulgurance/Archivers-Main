@@ -6,7 +6,7 @@ class Target < ISM::Software
         if option("Pass1")
             configureSource(arguments:  "--prefix=/usr                          \
                                         --host=#{Ism.settings.chrootTarget}     \
-                                        --build=#{Ism.settings.chrootTarget}    \
+                                        --build=#{Ism.settings.systemTarget}    \
                                         --disable-static                        \
                                         --disable-doc",
                             path:       buildDirectoryPath)
