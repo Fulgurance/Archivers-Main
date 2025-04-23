@@ -4,10 +4,10 @@ class Target < ISM::Software
         super
 
         if option("Pass1")
-            configureSource(arguments:  "--prefix=/usr                          \
-                                        --host=#{Ism.settings.chrootTarget}     \
-                                        --build=#{Ism.settings.systemTarget}    \
-                                        --disable-static                        \
+            configureSource(arguments:  "--prefix=/usr                      \
+                                        --host=#{Ism.settings.chrootTarget} \
+                                        --build=$(build-aux/config.guess)   \
+                                        --disable-static                    \
                                         --disable-doc",
                             path:       buildDirectoryPath)
         else
