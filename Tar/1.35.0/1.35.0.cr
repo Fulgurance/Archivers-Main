@@ -9,7 +9,10 @@ class Target < ISM::Software
                                         --build=$(build-aux/config.guess)",
                             path:       buildDirectoryPath)
         else
-            configureSource(arguments:      "--prefix=/usr",
+            configureSource(arguments:      "--prefix=/usr                          \
+                                            --host=#{Ism.settings.systemTarget}     \
+                                            --build=#{Ism.settings.systemTarget}    \
+                                            --target=#{Ism.settings.systemTarget}",
                             path:           buildDirectoryPath,
                             environment:    {"FORCE_UNSAFE_CONFIGURE" => "1"})
         end
