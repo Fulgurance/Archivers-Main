@@ -8,9 +8,9 @@
   "installedFiles": [],
   "dependencies": [
     {
-      "port": "Archivers-Main",
-      "name": "Bzip2",
-      "version": ">=1.0.8",
+      "port": "ProgrammingTools-Main",
+      "name": "Glibc",
+      "version": ">=2.40.0",
       "options": []
     }
   ],
