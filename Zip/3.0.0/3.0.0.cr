@@ -10,7 +10,7 @@ class Target < ISM::Software
     def prepareInstallation
         super
 
-        makeSource( arguments:   "prefix=#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}/usr MANDIR=/usr/share/man/man1 -f unix/Makefile install",
+        makeSource( arguments:   "prefix=#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}/usr MANDIR=#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}/usr/share/man/man1 -f unix/Makefile install",
                     path:       buildDirectoryPath)
     end
 
