@@ -1,0 +1,7 @@
+{
+  "name": "Archivers-Main",
+  "url": "https://github.com/Fulgurance/Archivers-Main",
+  "publicKeyUrl": "http://www.slashlinux.io/keyring/Fulgurance.key",
+  "type": "Git",
+  "description": "Port that contain all archiver softwares"
+}
