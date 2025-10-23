@@ -1,0 +1,19 @@
+PORT
+    Archivers-Main
+NAME
+    Unrar
+VERSION
+    6.2.10
+ARCHITECTURES
+    x86_64
+DESCRIPTION
+    Subset of RAR Project to unpack RAR archives
+WEBSITE
+    https://www.rarlab.com
+DEPENDENCIES
+        @SystemBase-Main:SystemBase>=0.2.0
+KERNELDEPENDENCIES
+OPTIONS
+UNIQUEDEPENDENCIES
+UNIQUEOPTIONS
+ALLOWCODEPENDENCIES

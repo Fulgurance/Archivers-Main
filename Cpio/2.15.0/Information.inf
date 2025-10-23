@@ -1,0 +1,19 @@
+PORT
+    Archivers-Main
+NAME
+    Cpio
+VERSION
+    2.15.0
+ARCHITECTURES
+    x86_64
+DESCRIPTION
+    GNU cpio copies files into or out of a cpio or tar archive
+WEBSITE
+    https://www.gnu.org/software/cpio/
+DEPENDENCIES
+        @SystemBase-Main:SystemBase>=0.2.0
+KERNELDEPENDENCIES
+OPTIONS
+UNIQUEDEPENDENCIES
+UNIQUEOPTIONS
+ALLOWCODEPENDENCIES

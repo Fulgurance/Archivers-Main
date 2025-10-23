@@ -1,0 +1,19 @@
+PORT
+    Archivers-Main
+NAME
+    P7zip
+VERSION
+    17.4.0
+ARCHITECTURES
+    x86_64
+DESCRIPTION
+    New p7zip fork with additional codecs and improvements
+WEBSITE
+    https://github.com/p7zip-project/p7zip
+DEPENDENCIES
+        @SystemBase-Main:SystemBase>=0.2.0
+KERNELDEPENDENCIES
+OPTIONS
+UNIQUEDEPENDENCIES
+UNIQUEOPTIONS
+ALLOWCODEPENDENCIES

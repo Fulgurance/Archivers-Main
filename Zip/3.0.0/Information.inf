@@ -1,0 +1,19 @@
+PORT
+    Archivers-Main
+NAME
+    Zip
+VERSION
+    3.0.0
+ARCHITECTURES
+    x86_64
+DESCRIPTION
+    Info-ZIP portable compression/archiver utilities
+WEBSITE
+    https://sourceforge.net/projects/infozip/
+DEPENDENCIES
+        @SystemBase-Main:SystemBase>=0.2.0
+KERNELDEPENDENCIES
+OPTIONS
+UNIQUEDEPENDENCIES
+UNIQUEOPTIONS
+ALLOWCODEPENDENCIES
