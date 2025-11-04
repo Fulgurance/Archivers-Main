@@ -1,17 +1,17 @@
 PORT
     Archivers-Main
 NAME
-    Unrar
+    Makeself
 VERSION
-    7.0.9
+    2.6.0
 ARCHITECTURES
     x86_64
 DESCRIPTION
-    Subset of RAR Project to unpack RAR archives
+    A self-extracting archiving tool for Unix systems, in 100% shell script
 WEBSITE
-    https://github.com/aawc/unrar
+    https://makeself.io/
 DEPENDENCIES
-    @SystemBase-Main:SystemBase>=0.2.0
+        @SystemBase-Main:SystemBase>=0.2.0
 KERNELDEPENDENCIES
 OPTIONS
 UNIQUEDEPENDENCIES

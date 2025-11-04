@@ -3,15 +3,15 @@ PORT
 NAME
     Unrar
 VERSION
-    6.2.10
+    7.13.0
 ARCHITECTURES
     x86_64
 DESCRIPTION
     Subset of RAR Project to unpack RAR archives
 WEBSITE
-    https://www.rarlab.com
+   https://github.com/aawc/unrar
 DEPENDENCIES
-        @SystemBase-Main:SystemBase>=0.2.0
+    @SystemBase-Main:SystemBase>=0.2.0
 KERNELDEPENDENCIES
 OPTIONS
 UNIQUEDEPENDENCIES
