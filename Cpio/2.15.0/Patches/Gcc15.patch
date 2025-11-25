@@ -1,0 +1,24 @@
+diff -ur Cpio-2.15.0/src/extern.h Cpio-2.15.0-new/src/extern.h
+--- Cpio-2.15.0/src/extern.h	2024-01-14 11:42:18.000000000 +0000
++++ Cpio-2.15.0-new/src/extern.h	2025-11-25 11:34:40.219840652 +0000
+@@ -97,7 +97,7 @@
+ extern char output_is_special;
+ extern char input_is_seekable;
+ extern char output_is_seekable;
+-extern int (*xstat) ();
++extern int (*xstat) (const char * restrict,  struct stat * restrict);
+ extern void (*copy_function) ();
+ extern char *change_directory_option;
+ 
+diff -ur Cpio-2.15.0/src/global.c Cpio-2.15.0-new/src/global.c
+--- Cpio-2.15.0/src/global.c	2024-01-14 11:42:18.000000000 +0000
++++ Cpio-2.15.0-new/src/global.c	2025-11-25 11:34:40.223058315 +0000
+@@ -185,7 +185,7 @@
+ 
+ /* A pointer to either lstat or stat, depending on whether
+    dereferencing of symlinks is done for input files.  */
+-int (*xstat) ();
++int (*xstat) (const char * restrict,  struct stat * restrict);
+ 
+ /* Which copy operation to perform. (-i, -o, -p) */
+ void (*copy_function) () = 0;
